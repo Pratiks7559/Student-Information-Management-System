@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Board Exam Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Add Board Exam Details</h1>
+
+    <form action="add_board_details.php" method="POST">
+        <h3>10th Board Details</h3>
+        <label for="board_10th">10th Board Name:</label>
+        <input type="text" id="board_10th" name="board_10th" required>
+
+        <label for="school_10th">10th School Name:</label>
+        <input type="text" id="school_10th" name="school_10th" required>
+
+        <label for="year_10th">10th Passing Year:</label>
+        <input type="number" id="year_10th" name="year_10th" required min="1900" max="2099">
+
+        <label for="percentage_10th">10th Percentage:</label>
+        <input type="text" id="percentage_10th" name="percentage_10th" required>
+
+        <h3>12th Board Details</h3>
+        <label for="board_12th">12th Board Name:</label>
+        <input type="text" id="board_12th" name="board_12th" required>
+
+        <label for="school_12th">12th School Name:</label>
+        <input type="text" id="school_12th" name="school_12th" required>
+
+        <label for="year_12th">12th Passing Year:</label>
+        <input type="number" id="year_12th" name="year_12th" required min="1900" max="2099">
+
+        <label for="percentage_12th">12th Percentage:</label>
+        <input type="text" id="percentage_12th" name="percentage_12th" required>
+
+        <input type="submit" class="submit-btn" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Certificates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f4f8; /* Light background color */
+            background-image: linear-gradient(to bottom right, #f0f4f8, #e1e9ef); /* Gradient background */
+            transition: background-color 0.5s ease; /* Smooth transition for background color */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            animation: fadeIn 1s; /* Fade-in animation for the title */
+        }
+        .certificate-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for the form */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            animation: slideIn 0.5s ease; /* Slide-in animation for the form */
+        }
+        .certificate-section {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd; /* Border around each section */
+            border-radius: 5px;
+            transition: transform 0.2s; /* Transition effect for hover */
+        }
+        .certificate-section:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+            background-color: #f9f9f9; /* Change background color on hover */
+        }
+        label {
+            display: block;
+            margin: 5px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: border-color 0.2s; /* Smooth transition for input fields */
+        }
+        input[type="text"]:focus, input[type="file"]:focus {
+            border-color: #4CAF50; /* Highlight border on focus */
+        }
+        #addCertificateBtn, input[type="submit"] {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #4CAF50; /* Button color */
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for button */
+        }
+        #addCertificateBtn:hover, input[type="submit"]:hover {
+            background-color: #45a049; /* Darker shade on hover */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Certificates</h1>
+
+    <form id="certificateForm" action="add_certificate.php" method="POST" enctype="multipart/form-data">
+        <div id="certificateFields">
+            <div class="certificate-section">
+                <label for="certificate_name">Certificate Name:</label>
+                <input type="text" name="certificate_name[]" required>
+                <label for="certificate_file">Upload Certificate:</label>
+                <input type="file" name="certificate_file[]" accept=".pdf, .jpg, .png" required>
+            </div>
+        </div>
+        <button type="button" id="addCertificateBtn">Add Another Certificate</button><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('addCertificateBtn').addEventListener('click', function () {
+            var certificateFields = document.getElementById('certificateFields');
+            var newSection = document.createElement('div');
+            newSection.classList.add('certificate-section');
+            newSection.innerHTML = `
+                <label for="certificate_name">Certificate Name:</label>
+                <input type="text" name="certificate_name[]" required>
+                <label for="certificate_file">Upload Certificate:</label>
+                <input type="file" name="certificate_file[]" accept=".pdf, .jpg, .png" required>
+            `;
+            certificateFields.appendChild(newSection);
+        });
+    </script>
+</body>
+</html>

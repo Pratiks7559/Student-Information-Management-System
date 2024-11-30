@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Personal Details</title>
+    <style>
+        .form-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Update Personal Details</h2>
+    <form action="update_profile.php" method="POST" enctype="multipart/form-data">
+        <!-- Profile Photo -->
+        <div class="form-group">
+            <label for="profile_photo">Profile Photo (optional):</label>
+            <input type="file" id="profile_photo" name="profile_photo">
+        </div>
+
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" >
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+        </div>
+
+        <!-- Contact Number -->
+        <div class="form-group">
+            <label for="contact_no">Contact Number:</label>
+            <input type="text" id="contact_no" name="contact_no">
+        </div>
+
+        <!-- PRN Number (readonly) -->
+        <div class="form-group">
+            <label for="prn">PRN Number:</label>
+            <input type="text" id="prn" name="prn" >
+        </div>
+
+        <!-- ID Card Number -->
+        <div class="form-group">
+            <label for="id_card_no">ID Card Number:</label>
+            <input type="text" id="id_card_no" name="id_card_no">
+        </div>
+
+        <!-- Year of Study -->
+        <div class="form-group">
+            <label for="year_of_study">Year of Study:</label>
+            <select id="year_of_study" name="year_of_study">
+                <option value="1st year" >1st Year</option>
+                <option value="2nd year" >2nd Year</option>
+                <option value="3rd year" >3rd Year</option>
+                <option value="4th year" >4th Year</option>
+            </select>
+        </div>
+
+        <!-- Semester -->
+        <div class="form-group">
+            <label for="semester">Semester:</label>
+            <input type="number" id="semester" name="semester" min="1" max="8" >
+        </div>
+
+        <!-- CGPA -->
+        <div class="form-group">
+            <label for="cgpa">CGPA:</label>
+            <input type="text" id="cgpa" name="cgpa" >
+        </div>
+
+        <!-- Skills -->
+        <div class="form-group">
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" >
+        </div>
+
+        <button type="submit" name="update">Update Details</button>
+    </form>
+</body>
+</html>
